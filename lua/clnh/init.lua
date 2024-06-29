@@ -21,4 +21,4 @@ for _, cmd in ipairs({"git", "rg", {"fd", "fdfind"}}) do
 end
 
 -- Load main config
-require("config")
+require("clnh.config")

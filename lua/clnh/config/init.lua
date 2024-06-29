@@ -15,42 +15,43 @@ local spec = {{
 }}
 
 require("lazy").setup({
-  root = vim.fn.stdpath("data") .. "/lazy",
+  root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
   spec = spec,
-  lockfile = vim.fn.stdpath("config") .. "/.lazy.lock",
+  lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json", -- lockfile generated after running update.
   defaults = {
-    -- enable lazy loading of plugins
-    lazy = false,
-    version = nil,
+      lazy = false,
+      version = nil
+      -- version = "*", -- enable this to try installing the latest stable versions of plugins
   },
   install = {
-    -- install missing plugins
-    missing = true,
-    colorscheme = {"rose-pine", "habamax"},
+      -- install missing plugins on startup
+      missing = true,
+      -- try to load one of these colorschemes when starting an installation during startup
+      colorscheme = {"rose-pine", "habamax"}
   },
   checker = {
-    -- check for plugin updates
-    enabled = true,
-    -- notifcation when plugin updates are available
-    notify = false,
+      -- automatically check for plugin updates
+      enabled = true,
+      -- get a notification when new updates are found
+      notify = false,
+      -- check for updates every day
+      frequency = 86400
   },
   change_detection = {
-    -- check for config changes and reload ui
-    enabled = true,
-    -- notifcation when changes are found
-    notify = false,
-    -- how often to check for updates
-    frequency = 86400,
-  }
-  performance = {
-    cache = {
-      enabled = true
-    }
+      -- automatically check for config file changes and reload the ui
+      enabled = true,
+      -- get a notification when changes are found
+      notify = false
   },
-  state = vim.fn.stdpath("state") .. "/lazy/state.json",
+  performance = {
+      cache = {
+          enabled = true
+      }
+  },
+  state = vim.fn.stdpath("state") .. "/lazy/state.json" -- state info for checker and other things
 })
 
-local modules = {"config.autocmds", "config.options", "config.keymaps"}
+local modules = {"clnh.config.autocmds", "clnh.config.options", "clnh.config.keymaps"}
 
 for _, mod in ipairs(modules) do
   local ok, err = pcall(require, mod)
@@ -60,4 +61,4 @@ for _, mod in ipairs(modules) do
 end
 
 -- disable deprecated messages
-vim.deprecate = function end()
+vim.deprecate = function() end

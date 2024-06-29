@@ -5,7 +5,7 @@ local autocmd = vim.api.nvim_create_autocmd -- create autocommand
 autocmd("BufEnter", {
   pattern = "*",
   command = "setlocal number",
-}),
+})
 autocmd("WinEnter", {
   pattern = "*",
   callback = function()
@@ -13,7 +13,7 @@ autocmd("WinEnter", {
           vim.api.nvim_win_set_option(0, "relativenumber", true)
       end
   end
-}),
+})
 
 -- Highlight on yank
 autocmd("TextYankPost", {
@@ -49,7 +49,8 @@ autocmd("FileType", {
 
 -- Set colorcolumn
 autocmd("FileType", {
-  pattern = {"c", "cpp", "python", "rst"}
+  pattern = {"c", "cpp", "python", "rst"},
+  command = "setlocal colorcolumn=80"
 })
 
 -- Spell checking and text wrap for markdown/text files
