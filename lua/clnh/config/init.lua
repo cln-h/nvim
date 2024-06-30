@@ -11,7 +11,7 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true
 
 local spec = {{
-  import = "plugins"
+  import = "clnh.plugins"
 }}
 
 require("lazy").setup({
