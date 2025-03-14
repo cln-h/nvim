@@ -1,79 +1,98 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local builtin = require("telescope.builtin")
+local nmap = function(lhs, rhs)
+  vim.api.nvim_set_keymap('n', lhs, rhs, { noremap = true, silent = true })
+end
+
+nmap("<C-d>", "<C-d>zz")
+nmap("<C-u>", "<C-u>zz")
+nmap("J", "5j")
+nmap("K", "5k")
 
 return {
   -- Telescope
   {
     "<Leader>ff",
     function()
+      local builtin = require("telescope.builtin")
       builtin.find_files()
     end,
   },
   {
     "<Leader>fg",
     function()
+      local builtin = require("telescope.builtin")
       builtin.live_grep()
     end,
   },
   {
     "<Leader>fb",
     function()
+      local builtin = require("telescope.builtin")
       builtin.file_browser()
     end,
   },
   {
     "<Leader>fh",
     function()
+      local builtin = require("telescope.builtin")
       builtin.help_tags()
     end,
   },
   {
     "<Leader>fk",
     function()
+      local builtin = require("telescope.builtin")
       builtin.keymaps()
     end,
   },
   {
     "<Leader>fs",
     function()
+      local builtin = require("telescope.builtin")
       builtin.builtin()
     end,
   },
   {
     "<Leader>fw",
     function()
+      local builtin = require("telescope.builtin")
       builtin.grep_string()
     end,
   },
   {
     "<Leader>fd",
     function()
+      local builtin = require("telescope.builtin")
       builtin.diagnostics()
     end,
   },
   {
     "<Leader>fr",
     function()
+      local builtin = require("telescope.builtin")
       builtin.resume()
     end,
   },
   {
     "<Leader>f.",
     function()
+      local builtin = require("telescope.builtin")
       builtin.oldfiles()
     end,
   },
   {
     "<Leader><Leader>",
     function()
+      local builtin = require("telescope.builtin")
       builtin.buffers()
     end,
   },
   {
     "<Leader>/",
     function()
+      local builtin = require("telescope.builtin")
       builtin.current_buffer_fuzzy_find({
         previewer = false,
         layout_strategy = "vertical",
@@ -86,6 +105,7 @@ return {
   {
     "<Leader>f/",
     function()
+      local builtin = require("telescope.builtin")
       builtin.live_grep({
         grep_open_files = true,
         prompt_title = "Live Grep in Open Files",
@@ -95,6 +115,7 @@ return {
   {
     "<Leader>fn",
     function()
+      local builtin = require("telescope.builtin")
       builtin.find_files({ cwd = vim.fn.stdpath("config")})
     end,
   },
