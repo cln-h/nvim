@@ -155,7 +155,7 @@ return {
   { "<Leader>yf", "<Cmd>let @+ = expand('%')<CR>", desc = "Yank relative file path to clipboard" },
 
    -- LSP
-   { "K", vim.lsp.buf.hover, desc = "Toggle hover" },
+   { "<Leader>h", vim.lsp.buf.hover, desc = "Toggle hover" },
    { "gd", vim.lsp.buf.definition, desc = "Go to definition" },
    { "gD", vim.lsp.buf.declaration, desc = "Go to declaration" },
    { "gi", vim.lsp.buf.implementation, desc = "Go to implementation" },

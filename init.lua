@@ -199,14 +199,17 @@ require("lazy").setup({
     event = "VeryLazy",
     config = function()
         -- Requires language servers to be already installed
+        --[[
+          #!/bin/bash
+          npm i -g gopls pyright typescript typescript-language-server
+          brew install lua_ls
+        ]]
         -- :help lspconfig-all
         local servers = {
             gopls = {},
             lua_ls = {},
-            nil_ls = {},
             pyright = {},
             rust_analyzer = {},
-            terraformls = {},
             ts_ls = {},
         }
 
