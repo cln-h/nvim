@@ -18,6 +18,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.find_files()
     end,
+    desc = "Find files",
   },
   {
     "<Leader>fg",
@@ -25,6 +26,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.live_grep()
     end,
+    desc = "Live grep"
   },
   {
     "<Leader>fb",
@@ -32,6 +34,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.file_browser()
     end,
+    desc = "File browser"
   },
   {
     "<Leader>fh",
@@ -39,6 +42,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.help_tags()
     end,
+    desc = "Help tags"
   },
   {
     "<Leader>fk",
@@ -46,6 +50,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.keymaps()
     end,
+    desc = "Keymaps"
   },
   {
     "<Leader>fs",
@@ -53,6 +58,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.builtin()
     end,
+    desc = "Telescope builtin"
   },
   {
     "<Leader>fw",
@@ -60,6 +66,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.grep_string()
     end,
+    desc = "Grep string"
   },
   {
     "<Leader>fd",
@@ -67,6 +74,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.diagnostics()
     end,
+    desc = "Diagnostics"
   },
   {
     "<Leader>fr",
@@ -74,6 +82,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.resume()
     end,
+    desc = "Telescope resume"
   },
   {
     "<Leader>f.",
@@ -81,6 +90,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.oldfiles()
     end,
+    desc = "Recent files"
   },
   {
     "<Leader><Leader>",
@@ -88,6 +98,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.buffers()
     end,
+    desc = "Buffers"
   },
   {
     "<Leader>/",
@@ -101,6 +112,7 @@ return {
         },
       })
     end,
+    desc = "Fuzzy find in buffer"
   },
   {
     "<Leader>f/",
@@ -111,6 +123,7 @@ return {
         prompt_title = "Live Grep in Open Files",
       })
     end,
+    desc = "Live grep in buffers"
   },
   {
     "<Leader>fn",
@@ -118,6 +131,7 @@ return {
       local builtin = require("telescope.builtin")
       builtin.find_files({ cwd = vim.fn.stdpath("config")})
     end,
+    desc = "Find nvim config file"
   },
 
   -- Oil
